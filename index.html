@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Pro League Clone</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <h1>⚽ Pro League Clone</h1>
+      <div class="stars">🇨🇩 Linafoot — 4,5 ★</div>
+    </header>
+
+    <!-- Écran d'accueil / sélection -->
+    <section id="menu-screen" class="screen active">
+      <h2>Choisis ton mode</h2>
+      <button class="btn" data-mode="career">Carrière Club</button>
+      <button class="btn" data-mode="national">Carrière Sélection</button>
+      <button class="btn" data-mode="quick">Match Rapide</button>
+
+      <h3>Ligues disponibles</h3>
+      <select id="league-select">
+        <option value="rdc">🇨🇩 Linafoot (RDC) — 4,5★</option>
+        <option value="eng">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League</option>
+        <option value="fra">🇫🇷 Ligue 1</option>
+        <option value="esp">🇪🇸 La Liga</option>
+      </select>
+    </section>
+
+    <!-- Écran de match avec rendu 3D -->
+    <section id="match-screen" class="screen">
+      <div id="canvas-container"></div>
+      <div class="hud">
+        <div class="scoreboard">
+          <span id="team-home">TP Mazembe</span>
+          <span id="score">0 - 0</span>
+          <span id="team-away">AS Vita</span>
+        </div>
+        <div id="timer">00:00</div>
+      </div>
+      <button id="back-btn" class="btn-small">← Retour</button>
+    </section>
+  </div>
+
+  <!-- Three.js via importmap -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+
+  <script src="js/data.js"></script>
+  <script type="module" src="js/player3d.js"></script>
+</body>
+</html>
